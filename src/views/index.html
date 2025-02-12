@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tocador de Audiobook Dinâmico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/src/styles/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-aplicativo">
+        <header class="cabecalho-secao text-center py-3">
+            <h1 class="titulo-aplicativo">Tocador de Audiobook Dinâmico</h1>
+            <p class="descricao-aplicativo">Carregue seus áudios e crie seu audiobook personalizado!</p>
+        </header>
+
+        <main class="conteudo-principal">
+            <section class="secao-envio-arquivos container-envio-arquivos my-4">
+                <div class="mb-3">
+                    <label for="audio-files" class="form-label">Selecione os arquivos de áudio (MP3):</label>
+                    <input class="form-control" type="file" id="audio-files" multiple accept="audio/mp3">
+                </div>
+                <div class="mb-3">
+                    <label for="cover-image" class="form-label">Selecione a capa do livro (opcional):</label>
+                    <input class="form-control" type="file" id="cover-image" accept="image/*">
+                </div>
+                <button id="generate-player" class="btn btn-primary w-100">Gerar Player</button>
+            </section>
+
+            <section id="secao-player" class="container-player-audio d-none mt-4">
+                <div class="template-player-audio text-center">
+                    <div id="book-cover" class="imagem-capa-livro mb-3">
+                        <img src="" alt="Capa do Livro">
+                    </div>
+                    <p id="track-title" class="titulo-faixa fw-bold">Título da Faixa</p>
+
+                    <audio id="audio-player" class="elemento-audio" controls>
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+
+                    <div class="controles-player mt-3">
+                        <button id="prev-track" class="btn btn-secondary">Anterior</button>
+                        <button id="play-pause" class="btn btn-primary">Play</button>
+                        <button id="next-track" class="btn btn-secondary">Próxima</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="rodape-secao text-center py-3">
+            <p>Desenvolvido por Carlos Augusto</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const generatePlayerButton = document.getElementById("generate-player");
+            const audioFilesInput = document.getElementById("audio-files");
+            const coverImageInput = document.getElementById("cover-image");
+
+            generatePlayerButton.addEventListener("click", () => {
+                const audioFiles = audioFilesInput.files;
+                const coverImage = coverImageInput.files[0];
+
+                if (audioFiles.length === 0) {
+                    alert("Por favor, selecione pelo menos um arquivo de áudio.");
+                    return;
+                }
+
+                console.log("Audio files selected:", audioFiles);
+                console.log("Cover image selected:", coverImage);
+            });
+        });
+    </script>
+    <script src="/src/scripts/script.js"></script>
+</body>
+
+</html>
