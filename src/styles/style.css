@@ -14,6 +14,77 @@ body {
     font-family: Arial, sans-serif;
     color: #333;
 }
+
+
+nav.sandwich-menu{
+width: 85px;
+height: 100vh;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow: 3px 0px 0px #4a90e2;
+padding: 40px 0 40px 1%;
+overflow: hidden;
+transition: width 0.5s ease-in-out;
+}
+
+nav.sandwich-menu:hover{
+    width: 300px;
+}
+
+.btn-expand{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.btn-expand > i {
+    color:#121212;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.list-expand-menu a{
+    color: #121212;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 20px 4%;
+
+}
+
+ul li.list-expand-menu a .txt-link{
+margin-left: 40px;
+}
+
+ul li.list-expand-menu a .icon > i{
+    font-size: 2.5rem;
+    color: #121212;
+    margin: left 10px;
+
+}
+
+ul li.list-expand-menu:hover{
+    background:#4a90e2;
+    border-radius: 4px;
+}
+
+ul li.list-expand-menu{
+    transition: 1s;
+}
+
+.container-aplicativo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que o contêiner ocupe toda a altura da tela */
+    padding: 20px; /* Adiciona um pouco de espaço nas laterais */
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0); /* Gradiente suave de fundo */
+}
 /* Título e cabeçalho */
 .cabecalho-aplicativo {
     background-color: #4a90e2;
